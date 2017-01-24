@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe '/api/v1/items' do
   before :all do
-    create_list(:item, 10)
+    create_list(:item, 9)
   end
 
   it "should show JSON list for items" do
