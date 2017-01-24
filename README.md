@@ -1,5 +1,7 @@
 # README
 
+[DTR](https://docs.google.com/document/d/1GkAkzkCFK8TgeqYdQT3g5rwvcV6zoil0EvMYqYZrZLQ/edit?usp=sharing)
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
