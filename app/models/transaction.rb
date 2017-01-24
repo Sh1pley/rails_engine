@@ -1,3 +1,3 @@
 class Transaction < ApplicationRecord
-  validates :name, presence: true 
+  validates :invoice_id, :credit_card_number, :credit_card_expiration_date, :result, presence: true 
 end
