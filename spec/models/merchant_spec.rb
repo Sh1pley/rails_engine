@@ -1,13 +1,7 @@
 require 'rails_helper'
 
-describe Merchant do
+RSpec.describe Merchant, type: :model do
   describe "validations" do
-    context "invalid attributes" do
-      it "is invalid without name" do
-        merchant = Merchant.create()
-
-        expect(merchant).to be_invalid
-      end
-    end
+    it {is_expected.to validate_presence_of(:name)}
   end
 end

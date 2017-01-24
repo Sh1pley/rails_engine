@@ -16,4 +16,9 @@ FactoryGirl.define do
     merchant_id 1
     status 0
   end
+
+  factory :customer do
+    first_name "John"
+    last_name "Smith"
+  end
 end
