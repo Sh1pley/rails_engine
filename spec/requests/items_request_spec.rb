@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'Items' do
   before :all do
-    create_list(:item, 9)
+    create_list(:item, 10)
   end
 
   it "should show JSON list for items" do
@@ -11,7 +11,7 @@ describe 'Items' do
     item = items.first
 
     expect(response).to be_success
-    expect(items.count).to eq(11)
+    expect(items.count).to eq(10)
     expect(item).to be_a(Hash)
     expect(item).to have_key('name')
     expect(item).to have_key('description')
