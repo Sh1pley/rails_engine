@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe 'Invoices' do
-  before :each do
-    create_list(:invoice, 4)
+  before :all do
+    create_list(:invoice, 5)
   end
 
   it "should show JSON list for invoices" do
@@ -11,7 +11,7 @@ describe 'Invoices' do
     invoice = invoices.first
 
     expect(response).to be_success
-    expect(invoices.count).to eq(7)
+    expect(invoices.count).to eq(5)
     expect(invoice).to be_a(Hash)
   end
 
