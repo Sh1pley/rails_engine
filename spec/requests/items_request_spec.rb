@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe '/api/v1/items' do
+describe 'Items' do
   before :all do
     create_list(:item, 9)
   end
@@ -11,7 +11,18 @@ describe '/api/v1/items' do
     item = items.first
 
     expect(response).to be_success
-    expect(items.count).to eq(10)
+    expect(items.count).to eq(11)
+    expect(item).to be_a(Hash)
+    expect(item).to have_key('name')
+    expect(item).to have_key('description')
+    expect(item).to have_key('unit_price')
+  end
+
+  it "should show single JSON item for items/:id" do
+    get "/api/v1/items/3.json"
+    item = JSON.parse(response.body)
+
+    expect(response).to be_success
     expect(item).to be_a(Hash)
     expect(item).to have_key('name')
     expect(item).to have_key('description')

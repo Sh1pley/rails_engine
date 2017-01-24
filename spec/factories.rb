@@ -1,24 +1,37 @@
 FactoryGirl.define do
   factory :invoice_item do
-    item_id 1
-    invoice_id 1
+    item
+    invoice
     quantity 1
-    unit_price 1
+    unit_price 100
   end
+
   factory :item do
     name "Thing"
     description "Its a thing! Or something."
-    unit_price 1
-    merchant_id 1
+    unit_price 100
+    merchant
   end
+
   factory :invoice do
-    customer_id 1
-    merchant_id 1
-    status 0
+    customer
+    merchant
+    status "shipped"
   end
 
   factory :customer do
-    first_name "John"
-    last_name "Smith"
+    first_name Faker::Name.first_name
+    last_name Faker::Name.last_name
+  end
+
+  factory :merchant do
+    name Faker::Name.name
+  end
+
+  factory :transaction do
+    invoice
+    credit_card_number Faker::Business.credit_card_number
+    
+    result "success"
   end
 end

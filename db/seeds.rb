@@ -1,10 +1,11 @@
 require 'smarter_csv'
-require_relative '../app/models/customer'
-require_relative '../app/models/invoice'
-require_relative '../app/models/invoice_item'
-require_relative '../app/models/item'
-require_relative '../app/models/merchant'
-require_relative '../app/models/transaction'
+
+Customer.delete_all
+InvoiceItem.delete_all
+Invoice.delete_all
+Item.delete_all
+Merchant.delete_all
+Transaction.delete_all
 
 options = {:key_mapping => {:unwanted_row => nil, :old_row_name => :new_name}}
 
