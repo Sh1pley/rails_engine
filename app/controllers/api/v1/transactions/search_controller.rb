@@ -1,10 +1,10 @@
 class Api::V1::Transactions::SearchController < ApplicationController
   def index
-    render json: Transaction.find(transaction_params)
+    render json: Transaction.where(transaction_params)
   end
 
   def show
-    render json: Transaction.where(transaction_params).first
+    render json: Transaction.find_by(transaction_params)
   end
   
   private
