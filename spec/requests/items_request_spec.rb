@@ -28,4 +28,38 @@ describe 'Items' do
     expect(item).to have_key('description')
     expect(item).to have_key('unit_price')
   end
+
+  # it "should show best day for an item" do
+  #   invoices = create_list(:invoice, 3)
+  #   invoice = invoices.first
+  #   invoice.transaction.create(result: "success",
+  #                             credit_card_number: "0000000")
+  #   invoice2 = Invoice.find(2)
+  #   invoice2.transaction.create(result: "success",
+  #                             credit_card_number: "0000000")
+  #   invoice3 = Invoice.last
+  #   invoice3.transaction.create(result: "failed",
+  #                             credit_card_number: "0000000")
+                                                                             
+  #   item = Item.create(name: "thing",
+  #                       description: "its a thing!",
+  #                       unit_price: 100,
+  #                       merchant_id: 1)
+
+  #   invoice.invoice_items.create(quantity: 2,
+  #                                 unit_price: 100,
+  #                                 item_id: item.id)
+  #   invoice2.invoice_items.create(quantity: 1,
+  #                                 unit_price: 100,
+  #                                 item_id: item.id)
+  #   invoice3.invoice_items.create(quantity: 3,
+  #                                 unit_price: 100,
+  #                                 item_id: item.id)                                 
+
+
+  #   get '/api/v1/items/1/best_day'
+    
+  #   expect(response.body).to have_content(invoice.created_at)
+  # end
 end
+

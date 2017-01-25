@@ -8,7 +8,6 @@ describe '/api/v1/transactions' do
   it "should show JSON list for transactions" do
     get "/api/v1/transactions.json"
     transactions = JSON.parse(response.body)
-    byebug
     transaction = transactions.first
 
     expect(response).to be_success

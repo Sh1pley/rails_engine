@@ -13,6 +13,7 @@ Rails.application.routes.draw do
         get '/find', to: 'search#show'
         get '/find_all', to: 'search#index'
         get '/random', to: 'random_search#show'
+        get '/:id/best_day', to: 'best_day#show'
       end
       namespace :customers do
         get '/find', to: 'search#show'
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
         get '/random', to: 'random_search#show'
         get '/:id/invoices', to: 'customer_invoices#index'
         get '/:id/transactions', to: 'customer_transactions#index'
+        get '/:id/favorite_merchant', to: 'favorite_merchant#show'
       end
       namespace :transactions do
         get '/find', to: 'search#show'
