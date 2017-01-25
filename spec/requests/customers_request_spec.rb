@@ -16,4 +16,5 @@ describe '/api/v1/customers' do
     expect(customer).to have_key('first_name')
     expect(customer).to have_key('last_name')
   end
+
 end
