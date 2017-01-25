@@ -21,5 +21,6 @@ describe 'Invoices' do
 
     expect(response).to be_success
     expect(invoice).to be_a(Hash)
+    expect(response.body).to include("status")
   end
 end

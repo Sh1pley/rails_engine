@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe '/api/v1/customers' do
   before :all do
-    create_list(:customer, 9)
+    create_list(:customer, 10)
   end
 
   it "should show JSON list for customers" do
