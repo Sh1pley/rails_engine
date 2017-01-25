@@ -1,10 +1,10 @@
 class Api::V1::InvoiceItems::SearchController < ApplicationController
   def index
-    render json: InvoiceItem.find(invoice_item_params)
+    render json: InvoiceItem.where(invoice_item_params)
   end
 
   def show
-    render json: InvoiceItem.where(invoice_item_params).first
+    render json: InvoiceItem.find_by(invoice_item_params)
   end
   
   private
