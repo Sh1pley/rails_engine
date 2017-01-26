@@ -18,6 +18,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'faker'
+  gem 'simplecov', :require => false
 end
 
 group :development do
