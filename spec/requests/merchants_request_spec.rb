@@ -2,19 +2,16 @@ require 'rails_helper'
 
 describe '/api/v1/merchants' do
   before :all do
-    create_list(:merchant, 9)
+    create_list(:merchant, 10)
   end
 
-  it "should show JSON list for items" do
-    get "/api/v1/items.json"
-    items = JSON.parse(response.body)
-    item = items.first
+  it "should show JSON list for merchants" do
+    get "/api/v1/merchants.json"
+    merchants = JSON.parse(response.body)
+    merchant = merchants.first
 
     expect(response).to be_success
-    expect(items.count).to eq(10)
-    expect(item).to be_a(Hash)
-    expect(item).to have_key('name')
-    expect(item).to have_key('description')
-    expect(item).to have_key('unit_price')
+    expect(merchant).to be_a(Hash)
+    expect(merchant).to have_key('name')
   end
 end
