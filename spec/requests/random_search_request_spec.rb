@@ -21,7 +21,7 @@ describe 'RandomSearchController' do
     customer_attributes = JSON.parse(response.body)
 
     expect(customer_attributes).to be_a(Hash)
-    expect(customer_attributes.count).to eq(5)
+    expect(customer_attributes.count).to eq(3)
     expect(customer_attributes).to have_key('id')
     expect(customer_attributes).to have_key('first_name')
     expect(customer_attributes).to have_key('last_name')
@@ -32,7 +32,7 @@ describe 'RandomSearchController' do
     invoice_item_attributes = JSON.parse(response.body)
 
     expect(invoice_item_attributes).to be_a(Hash)
-    expect(invoice_item_attributes.count).to eq(7)
+    expect(invoice_item_attributes.count).to eq(5)
     expect(invoice_item_attributes).to have_key('id')
     expect(invoice_item_attributes).to have_key('quantity')
     expect(invoice_item_attributes).to have_key('unit_price')
@@ -45,7 +45,7 @@ describe 'RandomSearchController' do
     invoice_attributes = JSON.parse(response.body)
 
     expect(invoice_attributes).to be_a(Hash)
-    expect(invoice_attributes.count).to eq(6)
+    expect(invoice_attributes.count).to eq(4)
     expect(invoice_attributes).to have_key('id')
     expect(invoice_attributes).to have_key('status')
     expect(invoice_attributes).to have_key('customer_id')
@@ -57,7 +57,7 @@ describe 'RandomSearchController' do
     item_attributes = JSON.parse(response.body)
 
     expect(item_attributes).to be_a(Hash)
-    expect(item_attributes.count).to eq(7)
+    expect(item_attributes.count).to eq(5)
     expect(item_attributes).to have_key('id')
     expect(item_attributes).to have_key('name')
     expect(item_attributes).to have_key('description')
@@ -70,10 +70,9 @@ describe 'RandomSearchController' do
     transaction_attributes = JSON.parse(response.body)
 
     expect(transaction_attributes).to be_a(Hash)
-    expect(transaction_attributes.count).to eq(7)
+    expect(transaction_attributes.count).to eq(4)
     expect(transaction_attributes).to have_key('id')
     expect(transaction_attributes).to have_key('credit_card_number')
-    expect(transaction_attributes).to have_key('credit_card_expiration_date')
     expect(transaction_attributes).to have_key('result')
     expect(transaction_attributes).to have_key('invoice_id')
   end

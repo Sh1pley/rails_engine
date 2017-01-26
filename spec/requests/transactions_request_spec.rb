@@ -15,7 +15,6 @@ describe '/api/v1/transactions' do
     expect(transaction).to be_a(Hash)
     expect(transaction).to have_key('invoice_id')
     expect(transaction).to have_key('credit_card_number')
-    expect(transaction).to have_key('credit_card_expiration_date')
     expect(transaction).to have_key('result')
   end
 end
