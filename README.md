@@ -9,6 +9,7 @@ We created an API that consumes CSV files that represent sales history between M
 per sale transaction. The API will then respond to get requests for various relationships between these data tables and respond with JSON.
 
 ## Installation
+
 ```
   Clone the git repository
 ```
