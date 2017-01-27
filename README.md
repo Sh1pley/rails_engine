@@ -9,13 +9,24 @@ We created an API that consumes CSV files that represent sales history between M
 per sale transaction. The API will then respond to get requests for various relationships between these data tables and respond with JSON.
 
 ## Installation
+```
   Clone the git repository
-
+```
+```
   bundle install
-
+```
+```
   bin/rake db:{create,migrate,seed}
-
-  rspec -will run internal test suite
-
-  open coverage/index.html -will open html read out for spec coverage in rspec
-
+```
+```
+  rspec 
+```
+  -will run internal test suite
+```
+  open coverage/index.html 
+```
+  -will open html read out for spec coverage in rspec
+```
+  rails s
+```
+  -will start the localhost service
