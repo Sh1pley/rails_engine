@@ -28,6 +28,4 @@ describe 'Items' do
     expect(item).to have_key('description')
     expect(item).to have_key('unit_price')
   end
-
 end
-
