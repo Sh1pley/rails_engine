@@ -2,25 +2,20 @@
 
 [DTR](https://docs.google.com/document/d/1GkAkzkCFK8TgeqYdQT3g5rwvcV6zoil0EvMYqYZrZLQ/edit?usp=sharing)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Rails Engine 
+This project was developed by [Eric](https://github.com/cews7) and I as our introduction to APIs and working with JSON both sending and recieving. 
+We created an API that consumes CSV files that represent sales history between Merchants, Customers, Items, Invoices, Transactions and their respective Invoiced Items
+per sale transaction. The API will then respond to get requests for various relationships between these data tables and respond with JSON.
 
-* Ruby version
+## Installation
+  Clone the git repository
 
-* System dependencies
+  bundle install
 
-* Configuration
+  bin/rake db:{create,migrate,seed}
 
-* Database creation
+  rspec -will run internal test suite
 
-* Database initialization
+  open coverage/index.html -will open html read out for spec coverage in rspec
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
