@@ -16,7 +16,7 @@ describe 'Invoices' do
   end
 
   it "should show single JSON invoice for invoices/:id" do
-    get "/api/v1/invoices/3.json"
+    get "/api/v1/invoices/6.json"
     invoice = JSON.parse(response.body)
 
     expect(response).to be_success

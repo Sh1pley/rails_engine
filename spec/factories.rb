@@ -12,17 +12,35 @@ FactoryGirl.define do
     unit_price 100
     merchant
   end
-
   factory :invoice do
     customer
     merchant
     status "shipped"
   end
-
   factory :customer do
     first_name Faker::Name.first_name
     last_name Faker::Name.last_name
+
+    factory :customer_with_invoices do
+      transient do
+        invoices_count 5
+      end
+      after(:create) do |customer, evaluator|
+        create_list(:invoice, evaluator.invoices_count, customer: customer)
+      end
+    end
   end
+
+  # factory :invoice do
+  #   customer
+  #   merchant
+  #   status "shipped"
+  # end
+  #
+  # factory :customer do
+  #   first_name Faker::Name.first_name
+  #   last_name Faker::Name.last_name
+  # end
 
   factory :merchant do
     name Faker::Name.name
