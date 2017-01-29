@@ -6,7 +6,7 @@ describe '/api/v1/merchants' do
   end
 
   it "should show JSON list for merchants" do
-    get "/api/v1/merchants.json"
+    get "/api/v1/merchants"
     merchants = JSON.parse(response.body)
     merchant = merchants.first
 

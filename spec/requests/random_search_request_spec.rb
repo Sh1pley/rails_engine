@@ -7,7 +7,7 @@ describe 'RandomSearchController' do
   end
 
   it 'merchants/random shows JSON attr' do
-    get '/api/v1/merchants/random.json'
+    get '/api/v1/merchants/random'
     merchant_attributes = JSON.parse(response.body)
 
     expect(merchant_attributes).to be_a(Hash)
@@ -17,7 +17,7 @@ describe 'RandomSearchController' do
   end
 
   it 'customers/random shows JSON attr' do
-    get '/api/v1/customers/random.json'
+    get '/api/v1/customers/random'
     customer_attributes = JSON.parse(response.body)
 
     expect(customer_attributes).to be_a(Hash)
@@ -28,7 +28,7 @@ describe 'RandomSearchController' do
   end
 
   it 'invoice_items/random shows JSON attr' do
-    get '/api/v1/invoice_items/random.json'
+    get '/api/v1/invoice_items/random'
     invoice_item_attributes = JSON.parse(response.body)
 
     expect(invoice_item_attributes).to be_a(Hash)
@@ -41,7 +41,7 @@ describe 'RandomSearchController' do
   end
 
   it 'invoices/random shows JSON attr' do
-    get '/api/v1/invoices/random.json'
+    get '/api/v1/invoices/random'
     invoice_attributes = JSON.parse(response.body)
 
     expect(invoice_attributes).to be_a(Hash)
@@ -53,7 +53,7 @@ describe 'RandomSearchController' do
   end
 
    it 'items/random shows JSON attr' do
-    get '/api/v1/items/random.json'
+    get '/api/v1/items/random'
     item_attributes = JSON.parse(response.body)
 
     expect(item_attributes).to be_a(Hash)
@@ -66,7 +66,7 @@ describe 'RandomSearchController' do
   end
 
    it 'transactions/random shows JSON attr' do
-    get '/api/v1/transactions/random.json'
+    get '/api/v1/transactions/random'
     transaction_attributes = JSON.parse(response.body)
 
     expect(transaction_attributes).to be_a(Hash)

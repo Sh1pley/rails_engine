@@ -3,10 +3,8 @@ require 'rails_helper'
 describe '/merchants/:id/items' do
   before :all do
     @merchant = create(:merchant)
-    invoice = create(:invoice)
-    @items = create_list(:invoice_item, 5)
-    invoice.invoice_items << @items
-    @merchant.invoices << invoice
+    @items = create_list(:item, 5)
+    @merchant.items << @items
   end
 
   it 'should show JSON list of items' do
@@ -19,5 +17,6 @@ describe '/merchants/:id/items' do
     expect(item).to have_key("merchant_id")
     expect(item).to have_key("name")
     expect(item).to have_key("description")
-    end
+  end
+
 end

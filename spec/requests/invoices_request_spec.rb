@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 describe 'Invoices' do
-  before :all do
+  before :each do
     create_list(:invoice, 5)
+    @invoice = Invoice.first
   end
 
   it "should show JSON list for invoices" do
-    get "/api/v1/invoices.json"
+    get "/api/v1/invoices"
     invoices = JSON.parse(response.body)
     invoice = invoices.first
 
@@ -16,7 +17,7 @@ describe 'Invoices' do
   end
 
   it "should show single JSON invoice for invoices/:id" do
-    get "/api/v1/invoices/3.json"
+    get "/api/v1/invoices/#{@invoice.id}"
     invoice = JSON.parse(response.body)
 
     expect(response).to be_success
