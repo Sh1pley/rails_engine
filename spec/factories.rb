@@ -12,11 +12,23 @@ FactoryGirl.define do
     unit_price 100
     merchant
   end
+  
   factory :invoice do
     customer
     merchant
     status "shipped"
   end
+
+  factory :merchant do
+    name Faker::Name.name
+  end
+
+  factory :transaction do
+    invoice
+    credit_card_number Faker::Business.credit_card_number
+    result "success"
+  end
+
   factory :customer do
     first_name Faker::Name.first_name
     last_name Faker::Name.last_name
@@ -31,24 +43,4 @@ FactoryGirl.define do
     end
   end
 
-  # factory :invoice do
-  #   customer
-  #   merchant
-  #   status "shipped"
-  # end
-  #
-  # factory :customer do
-  #   first_name Faker::Name.first_name
-  #   last_name Faker::Name.last_name
-  # end
-
-  factory :merchant do
-    name Faker::Name.name
-  end
-
-  factory :transaction do
-    invoice
-    credit_card_number Faker::Business.credit_card_number
-    result "success"
-  end
 end

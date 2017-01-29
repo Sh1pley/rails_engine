@@ -28,5 +28,29 @@ describe 'merchants' do
     expect(response).to be_success
     expect(revenue["revenue"]).to include("100")
   end
+
+  it "should show JSON list for merchants" do
+    get "/api/v1/merchants"
+    merchants = JSON.parse(response.body)
+    merchant = merchants.first
+
+    expect(response).to be_success
+    expect(merchant).to be_a(Hash)
+    expect(merchant).to have_key('name')
+  end
+
+  it '/revenue by date should return revenue on that date' do
+    merchant = Merchant.second
+    merchant.invoices << create(:invoice)
+    merchant.invoices.first.invoice_items << create(:invoice_item, unit_price: 100000)
+    invoice = merchant.invoices.first
+    invoice.transactions << create(:transaction)
+    get "/api/v1/merchants/#{merchant.id}/revenue?date=#{invoice.created_at}"
+    result = JSON.parse(response.body)
+
+    expect(response).to be_success
+    expect(result["revenue"]).to eq("1000.0")
+  end
+
   
 end

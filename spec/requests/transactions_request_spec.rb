@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe '/api/v1/transactions' do
-  before :all do
+  before :each do
     create_list(:transaction, 10)
   end
 
