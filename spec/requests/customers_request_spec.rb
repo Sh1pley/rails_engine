@@ -6,7 +6,7 @@ describe '/api/v1/customers' do
   end
 
   it "should show JSON list for customers" do
-    get "/api/v1/customers.json"
+    get "/api/v1/customers"
     customers = JSON.parse(response.body)
 
     customer = customers.first

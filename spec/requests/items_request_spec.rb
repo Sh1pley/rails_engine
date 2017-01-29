@@ -3,10 +3,11 @@ require 'rails_helper'
 describe 'Items' do
   before :all do
     create_list(:item, 10)
+    @item = Item.first
   end
 
   it "should show JSON list for items" do
-    get "/api/v1/items.json"
+    get "/api/v1/items"
     items = JSON.parse(response.body)
     item = items.first
 
@@ -19,7 +20,7 @@ describe 'Items' do
   end
 
   it "should show single JSON item for items/:id" do
-    get "/api/v1/items/3.json"
+    get "/api/v1/items/#{@item.id}"
     item = JSON.parse(response.body)
 
     expect(response).to be_success
