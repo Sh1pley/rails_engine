@@ -23,6 +23,8 @@ end
 
 group :development do
   gem 'listen', '~> 3.0.5'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

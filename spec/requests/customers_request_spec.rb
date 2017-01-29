@@ -8,6 +8,7 @@ describe '/api/v1/customers' do
   it "should show JSON list for customers" do
     get "/api/v1/customers"
     customers = JSON.parse(response.body)
+
     customer = customers.first
 
     expect(response).to be_success
